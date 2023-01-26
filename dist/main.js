@@ -1,1 +1,1 @@
-"use strict";var o="Hello World";console.log(o);var l=function(){console.log("foo")};l();
+"use strict";var o="Hello World";console.log(o);var l=function(){console.log("foo")};l();var e="Hello World 11";console.log(e);

@@ -5,3 +5,6 @@ const foo = () => {
     console.log('foo');
 }
 foo()
+
+const title = 'Hello World 11';
+console.log(title);
