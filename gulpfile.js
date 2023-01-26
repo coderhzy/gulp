@@ -1,31 +1,10 @@
-const { series  } = require('gulp');
-const {parallel }= require('gulp');
-
-const foo = (cb) => {
-    setTimeout(() => {
-        console.log('foo');
-        cb()
-    }, 2000)
+const { src,dest } = require('gulp')
+const copyFile = (cb) => {
+    // 1. 读取文件 
+    src('./src/**/*.js').pipe(dest('./dist')) 
+    cb()
 }
-
-const coco = (cb) => {
-    setTimeout(() => {
-        console.log('coco');
-        cb()
-    }, 2000)
-}
-
-const bar = (cb) => {
-    setTimeout(() => {
-        console.log('bar');
-        cb()
-    }, 2000)
-}
-
-const seriesFoo = series(foo, coco, bar);
-const parallelFoo = parallel(foo, coco, bar);
 
 module.exports = {
-    seriesFoo,
-    parallelFoo
-}
+    copyFile
+} 
