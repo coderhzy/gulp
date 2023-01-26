@@ -1,3 +1,1 @@
-function sum (a, b) {
-    return a + b
-}
+"use strict";function t(t,n){return t+n}

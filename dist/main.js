@@ -1,7 +1,1 @@
-const message = 'Hello World';
-console.log(message);
-
-const foo = () => {
-    console.log('foo');
-}
-foo()
+"use strict";var o="Hello World";console.log(o);var l=function(){console.log("foo")};l();

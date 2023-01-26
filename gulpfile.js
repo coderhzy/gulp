@@ -1,10 +1,15 @@
-const { src,dest } = require('gulp')
-const copyFile = (cb) => {
-    // 1. 读取文件 
-    src('./src/**/*.js').pipe(dest('./dist')) 
-    cb()
+const { src,dest  } = require('gulp'); 
+const babel = require("gulp-babel");
+const terser = require('gulp-terser');
+
+
+const jsTask = () => {
+    return src('./src/**/*.js')
+        .pipe(babel())
+        .pipe(terser({ mangle: { toplevel: true }}))
+        .pipe(dest('./dist'));
 }
 
 module.exports = {
-    copyFile
-} 
+    jsTask
+}

@@ -1,1 +1,1 @@
-const abc = 'abc';
+"use strict";var a="abc";
