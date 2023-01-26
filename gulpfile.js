@@ -1,18 +1,10 @@
-const { src,dest,watch  } = require('gulp'); 
+const { src, dest } = require("gulp");
+const htmlmin = require('gulp-htmlmin')
 
-const babel = require("gulp-babel");
-const terser = require('gulp-terser');
-
-
-const jsTask = () => {
-    return src('./src/**/*.js')
-        .pipe(babel())
-        .pipe(terser({ mangle: { toplevel: true }}))
-        .pipe(dest('./dist'));
-}
-
-watch('./src/**/*.js', jsTask);
+const htmlTask = () => {
+  return src("./src/**/*.html").pipe(htmlmin({ collapseWhitespace: true })).pipe(dest("./dist"));
+};
 
 module.exports = {
-    jsTask
-}
+  htmlTask,
+};

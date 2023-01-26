@@ -15,5 +15,8 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-terser": "^2.1.0"
+  },
+  "dependencies": {
+    "gulp-htmlmin": "^5.0.1"
   }
 }
