@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp finalTask",
+    "serve": "gulp serveTask"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
+    "browser-sync": "^2.27.11",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-inject": "^5.0.5",

@@ -1,9 +1,10 @@
-const { src, dest, parallel, series } = require("gulp");
+const { src, dest, parallel, series,watch } = require("gulp");
 const htmlmin = require("gulp-htmlmin");
 const babel = require("gulp-babel");
 const terser = require("gulp-terser");
 const less = require("gulp-less");
 const inject = require("gulp-inject");
+const browserSync = require('browser-sync');
 
 // 1. 对html进行打包
 const htmlTask = () => {
@@ -31,10 +32,29 @@ const injectTask = () => {
     .pipe(dest("./dist"));
 };
 
+
+// 开启一个本地服务器
+const bs = browserSync.create()
+const serve= () => {
+  watch('./src/**', finalTask)
+
+  bs.init({
+    port: 8080,
+    open: true,
+    files: './dist/**',
+    server: {
+      baseDir: './dist',
+    }
+  })
+}
+
 // 5. 创建打包任务
 const buildTask = parallel(htmlTask, jsTask, lessTask);
 const finalTask = series(buildTask, injectTask);
+const serveTask = series(finalTask, serve);
+
 
 module.exports = {
   finalTask,
+  serveTask
 };

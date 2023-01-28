@@ -1,1 +1,1 @@
-"use strict";var sum=function(){return 2};
+"use strict";var sum=function(){return 2};console.log(2222);
