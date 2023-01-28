@@ -1,1 +1,1 @@
-console.log("jquery.js");
+"use strict";console.log("jquery.js");

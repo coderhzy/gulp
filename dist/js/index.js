@@ -1,1 +1,1 @@
-const sum=()=>2;
+"use strict";var sum=function(){return 2};
